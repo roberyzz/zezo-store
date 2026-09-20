@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho — ZezoStore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="bg-orbs">
+    <span class="orb-1"></span>
+    <span class="orb-2"></span>
+    <span class="orb-3"></span>
+  </div>
+  <div class="bg-noise"></div>
+
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+  <canvas id="trail-canvas"></canvas>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="pixel">ZEZO</span>Store
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="loja.html">Loja</a></li>
+          <li><a href="faq.html">Como funciona</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Suporte</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="carrinho.html" class="cart-btn" aria-label="Carrinho">
+          🛒
+          <span class="cart-count">0</span>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== CABEÇALHO DA PÁGINA ===================== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        SEU CARRINHO
+      </div>
+      <h1>Finalize sua compra.</h1>
+      <p>Confira os itens antes de fechar o pedido.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CARRINHO ===================== -->
+  <section class="cart-section">
+    <div class="container cart-layout">
+
+      <div class="cart-items" id="cart-items">
+        <!-- preenchido via JS -->
+      </div>
+
+      <div class="cart-summary">
+        <h3>Resumo do pedido</h3>
+        <div class="cart-summary-line">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">R$ 0,00</span>
+        </div>
+        <div class="cart-summary-line">
+          <span>Taxa de serviço</span>
+          <span>R$ 0,00</span>
+        </div>
+        <div class="cart-summary-line total">
+          <span>Total</span>
+          <span id="cart-total">R$ 0,00</span>
+        </div>
+        <button class="btn-primary" id="checkout-btn" style="width: 100%; justify-content: center; margin-top: 20px;">
+          Finalizar compra
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== MODAL DE CHECKOUT ===================== -->
+  <div class="modal-overlay" id="checkout-modal">
+    <div class="modal-box">
+
+      <div id="modal-step-payment">
+        <h3>Forma de pagamento</h3>
+        <div class="payment-methods">
+          <div class="payment-method active" data-method="pix">Pix</div>
+          <div class="payment-method" data-method="cartao">Cartão</div>
+        </div>
+
+        <div id="pix-fields">
+          <div class="pix-box">
+            <p>Escaneie o QR Code ou copie o código Pix abaixo (simulação).</p>
+            <div class="pix-code">00020126580014BR.GOV.BCB.PIX0136zezostore-fake-pix-a1b2c3d4e5f65204000053039865802BR5913ZezoStore6009SAOPAULO62070503***6304ABCD</div>
+          </div>
+        </div>
+
+        <div id="card-fields" style="display:none;">
+          <input type="text" placeholder="Número do cartão" />
+          <input type="text" placeholder="Nome no cartão" />
+          <div style="display:flex; gap:10px;">
+            <input type="text" placeholder="Validade" style="flex:1;" />
+            <input type="text" placeholder="CVV" style="flex:1;" />
+          </div>
+        </div>
+
+        <button class="btn-primary" id="confirm-payment-btn" style="width: 100%; justify-content: center; margin-top: 8px;">
+          Confirmar pagamento
+        </button>
+        <button class="modal-close" id="close-modal-btn">Cancelar</button>
+      </div>
+
+      <div id="modal-step-success" style="display:none;">
+        <div class="modal-success">
+          <div class="check">✓</div>
+          <h3 style="text-align:center;">Pedido confirmado!</h3>
+          <p style="text-align:center; color: var(--text-muted); margin-top: 8px;">
+            Seus itens serão entregues em instantes (simulação — projeto de estudo).
+          </p>
+        </div>
+        <button class="modal-close" id="close-success-btn">Fechar</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="pixel">ZEZO</span>Store</a>
+          <p>Moedas e itens digitais pra todo gamer, com entrega rápida e segura.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Loja</h4>
+          <ul>
+            <li><a href="loja.html">Todos os produtos</a></li>
+            <li><a href="categoria.html?jogo=robux">Robux</a></li>
+            <li><a href="categoria.html?jogo=vbucks">V-Bucks</a></li>
+            <li><a href="categoria.html?jogo=cs2">Skins CS2</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="faq.html">Como funciona</a></li>
+            <li><a href="contato.html">Suporte</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sua conta</h4>
+          <ul>
+            <li><a href="carrinho.html">Carrinho</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ZezoStore. Todos os direitos reservados.</p>
+        <p>Projeto de estudo</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

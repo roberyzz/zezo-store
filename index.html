@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZezoStore — Moedas e itens digitais pra todo gamer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="bg-orbs">
+    <span class="orb-1"></span>
+    <span class="orb-2"></span>
+    <span class="orb-3"></span>
+  </div>
+  <div class="bg-noise"></div>
+
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+  <canvas id="trail-canvas"></canvas>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="pixel">ZEZO</span>Store
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Início</a></li>
+          <li><a href="loja.html">Loja</a></li>
+          <li><a href="faq.html">Como funciona</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html">Suporte</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="carrinho.html" class="cart-btn" aria-label="Carrinho">
+          🛒
+          <span class="cart-count">0</span>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero-grid-lines"></div>
+    <div class="three-hero" id="three-hero"></div>
+
+    <div class="container">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        ENTREGA EM MINUTOS
+      </div>
+
+      <h1>Suba de nível na sua <span class="highlight" data-text="conta gamer.">conta gamer.</span></h1>
+
+      <p>
+        Robux, V-Bucks, Gift Cards, skins de CS2, diamantes de Free Fire e
+        créditos Steam — tudo num só lugar, com entrega rápida e segura.
+      </p>
+
+      <div class="hero-actions">
+        <a href="loja.html" class="btn-primary">🎮 Explorar loja</a>
+        <a href="faq.html" class="btn-secondary">Como funciona</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <rect x="3" y="3" width="7" height="7" rx="1.5" />
+            <rect x="14" y="3" width="7" height="7" rx="1.5" />
+            <rect x="3" y="14" width="7" height="7" rx="1.5" />
+            <rect x="14" y="14" width="7" height="7" rx="1.5" />
+          </svg>
+          <h3>6 plataformas</h3>
+          <p>Num só lugar</p>
+        </div>
+        <div class="stat-card">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M12 2.5l2.9 6.1 6.6.9-4.8 4.6 1.2 6.6L12 17.6l-5.9 3.1 1.2-6.6-4.8-4.6 6.6-.9z" stroke-linejoin="round" />
+          </svg>
+          <h3>4.9 / 5</h3>
+          <p>Avaliação média</p>
+        </div>
+        <div class="stat-card">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 7v5l3.5 2" stroke-linecap="round" />
+          </svg>
+          <h3>~5 min</h3>
+          <p>Tempo de entrega</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MARQUEE ===================== -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>ROBUX</span>
+      <span>V-BUCKS</span>
+      <span>GIFT CARDS</span>
+      <span>SKINS CS2</span>
+      <span>FREE FIRE</span>
+      <span>STEAM</span>
+      <span>ROBUX</span>
+      <span>V-BUCKS</span>
+      <span>GIFT CARDS</span>
+      <span>SKINS CS2</span>
+      <span>FREE FIRE</span>
+      <span>STEAM</span>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="pixel">ZEZO</span>Store</a>
+          <p>Moedas e itens digitais pra todo gamer, com entrega rápida e segura.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Loja</h4>
+          <ul>
+            <li><a href="loja.html">Todos os produtos</a></li>
+            <li><a href="categoria.html?jogo=robux">Robux</a></li>
+            <li><a href="categoria.html?jogo=vbucks">V-Bucks</a></li>
+            <li><a href="categoria.html?jogo=cs2">Skins CS2</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="faq.html">Como funciona</a></li>
+            <li><a href="contato.html">Suporte</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sua conta</h4>
+          <ul>
+            <li><a href="carrinho.html">Carrinho</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ZezoStore. Todos os direitos reservados.</p>
+        <p>Projeto de estudo</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+  <script src="js/three-hero.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cursor.js"></script>
+</body>
+</html>

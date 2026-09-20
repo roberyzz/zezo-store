@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suporte — ZezoStore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="bg-orbs">
+    <span class="orb-1"></span>
+    <span class="orb-2"></span>
+    <span class="orb-3"></span>
+  </div>
+  <div class="bg-noise"></div>
+
+  <div class="cursor-ring"></div>
+  <div class="cursor-dot"></div>
+  <canvas id="trail-canvas"></canvas>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="pixel">ZEZO</span>Store
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="loja.html">Loja</a></li>
+          <li><a href="faq.html">Como funciona</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="contato.html" class="active">Suporte</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="carrinho.html" class="cart-btn" aria-label="Carrinho">
+          🛒
+          <span class="cart-count">0</span>
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== CABEÇALHO DA PÁGINA ===================== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        SUPORTE
+      </div>
+      <h1>Precisa de ajuda?</h1>
+      <p>Fala com a gente por qualquer um dos canais abaixo.</p>
+    </div>
+  </section>
+
+  <!-- ===================== CONTATO ===================== -->
+  <section class="contact-section">
+    <div class="container contact-grid">
+
+      <div class="contact-info">
+        <div class="contact-card">
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/5511999999999" target="_blank" rel="noopener">(11) 99999-9999</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>E-mail</h3>
+          <p><a href="mailto:suporte@zezostore.com">suporte@zezostore.com</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Discord</h3>
+          <p><a href="#" target="_blank" rel="noopener">discord.gg/zezostore</a></p>
+        </div>
+        <div class="contact-card">
+          <h3>Horário de atendimento</h3>
+          <p>Todos os dias, das 9h às 23h</p>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contact-form">
+        <input type="text" placeholder="Seu nome" required />
+        <input type="email" placeholder="Seu e-mail" required />
+        <input type="text" placeholder="Assunto" required />
+        <textarea rows="5" placeholder="Como podemos ajudar?" required></textarea>
+        <button type="submit" class="btn-primary">Enviar mensagem</button>
+        <p class="form-feedback" style="display:none; color: var(--magenta-light); font-size: 0.9rem;"></p>
+      </form>
+
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><span class="pixel">ZEZO</span>Store</a>
+          <p>Moedas e itens digitais pra todo gamer, com entrega rápida e segura.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Loja</h4>
+          <ul>
+            <li><a href="loja.html">Todos os produtos</a></li>
+            <li><a href="categoria.html?jogo=robux">Robux</a></li>
+            <li><a href="categoria.html?jogo=vbucks">V-Bucks</a></li>
+            <li><a href="categoria.html?jogo=cs2">Skins CS2</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="sobre.html">Sobre nós</a></li>
+            <li><a href="faq.html">Como funciona</a></li>
+            <li><a href="contato.html">Suporte</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sua conta</h4>
+          <ul>
+            <li><a href="carrinho.html">Carrinho</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 ZezoStore. Todos os direitos reservados.</p>
+        <p>Projeto de estudo</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/cursor.js"></script>
+  <script>
+    document.getElementById("contact-form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const feedback = e.target.querySelector(".form-feedback");
+      feedback.textContent = "Mensagem enviada! Nosso suporte responde em breve. (simulação — projeto de estudo)";
+      feedback.style.display = "block";
+      e.target.reset();
+    });
+  </script>
+</body>
+</html>
